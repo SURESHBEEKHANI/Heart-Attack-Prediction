@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include Bootstrap CSS (make sure to have Bootstrap in your project or include a CDN link) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Heart Attack Prediction</h1>
+        <p>Predict the risk of a heart attack with our easy-to-use form.</p>
+    </header>
+    <main>
+        <div class="container">
+            <form action="{{ url_for('predict_datapoint') }}" method="post">
+                <div class="card mb-3">
+                    <label for="sex">Sex:</label>
+                    <select id="sex" name="sex" class="form-control" required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+
+                <div class="card mb-3">
+                    <label for="chestPainType">Chest Pain Type:</label>
+                    <select id="chestPainType" name="chestPainType" class="form-control" required>
+                        <option value="ATA">ATA</option>
+                        <option value="NAP">NAP</option>
+                        <option value="ASY">ASY</option>
+                        <option value="TA">TA</option>
+                    </select>
+                </div>
+
+                <div class="card mb-3">
+                    <label for="restingECG">Resting ECG:</label>
+                    <select id="restingECG" name="restingECG" class="form-control" required>
+                        <option value="Normal">Normal</option>
+                        <option value="ST">ST</option>
+                        <option value="LVH">LVH</option>
+                    </select>
+                </div>
+
+                <div class="card mb-3">
+                    <label for="exerciseAngina">Exercise Angina:</label>
+                    <select id="exerciseAngina" name="exerciseAngina" class="form-control" required>
+                        <option value="N">No</option>
+                        <option value="Y">Yes</option>
+                    </select>
+                </div>
+
+                <div class="card mb-3">
+                    <label for="stSlope">ST Slope:</label>
+                    <select id="stSlope" name="stSlope" class="form-control" required>
+                        <option value="Up">Up</option>
+                        <option value="Flat">Flat</option>
+                        <option value="Down">Down</option>
+                    </select>
+                </div>
+
+                <div class="card mb-3">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" class="form-control" required min="0">
+                </div>
+
+                <div class="card mb-3">
+                    <label for="restingBP">Resting Blood Pressure:</label>
+                    <input type="number" id="restingBP" name="restingBP" class="form-control" required min="0">
+                </div>
+
+                <div class="card mb-3">
+                    <label for="cholesterol">Cholesterol:</label>
+                    <input type="number" id="cholesterol" name="cholesterol" class="form-control" required min="0">
+                </div>
+
+                <div class="card mb-3">
+                    <label for="fastingBS">Fasting Blood Sugar:</label>
+                    <input type="number" id="fastingBS" name="fastingBS" class="form-control" required min="0">
+                </div>
+
+                <div class="card mb-3">
+                    <label for="maxHR">Max Heart Rate:</label>
+                    <input type="number" id="maxHR" name="maxHR" class="form-control" required min="0">
+                </div>
+
+                <div class="card mb-3">
+                    <label for="oldpeak">Oldpeak:</label>
+                    <input type="number" id="oldpeak" name="oldpeak" class="form-control" required step="0.1">
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Predict Risk of Heart Attack" />
+                </div>
+            </form>
+
+            <!-- Display prediction result -->
+            <h2>
+                The prediction is: {{ results }}
+            </h2>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Heart Health Initiative</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
