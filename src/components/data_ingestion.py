@@ -64,8 +64,9 @@ if __name__ == '__main__':
 
     # Create an instance of DataTransformation
     data_transformation = DataTransformation()
-    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr, test_arr, _ = data_transformation.initate_data_transformation(train_data,test_data)
 
-    # Create an instance of ModelTrainer
-    modeltrainer = ModelTrainer()
-    modeltrainer.initiate_model_trainer(train_arr, test_arr)
+    #Create an instance of ModelTrainer
+    model_trainer = ModelTrainer()
+    metrics = model_trainer.initiate_model_training(train_arr, test_arr)
+

@@ -38,39 +38,43 @@ class PredictPipeline:
 
 class CustomData:
     def __init__(self,
+                 age: int,
                  sex: str,
-                 age: float,
                  chest_pain_type: str,
                  resting_bp: float,
                  cholesterol: float,
                  fasting_bs: int,
+                 resting_ecg: str,  # Added resting ECG
                  max_hr: float,
-                 oldpeak: float,
                  exercise_angina: str,
+                 oldpeak: float,
                  st_slope: str):
         """
         Initialize custom data for prediction.
 
         Parameters:
-            sex (str): Gender of the patient.
             age (float): Age of the patient.
-            chest_pain_type (str): Type of chest pain.
+            sex (str): Gender of the patient (M/F).
+            chest_pain_type (str): Type of chest pain (ATA/NAP/ASY).
             resting_bp (float): Resting blood pressure.
             cholesterol (float): Cholesterol level.
-            fasting_bs (int): Fasting blood sugar level.
+            fasting_bs (int): Fasting blood sugar level (0 or 1).
+            resting_ecg (str): Resting ECG results (Normal/ST).
             max_hr (float): Maximum heart rate achieved.
             oldpeak (float): ST depression induced by exercise relative to rest.
-            exercise_angina (str): Whether the patient experiences angina during exercise.
-            st_slope (str): The slope of the ST segment.
+            exercise_angina (str): Whether the patient experiences angina during exercise (Y/N).
+            st_slope (str): The slope of the ST segment (Up/Flat/Down).
         """
-        
-        # Assign input parameters to instance variables
-        self.sex = sex
+        if age is None or resting_bp is None or cholesterol is None or max_hr is None or oldpeak is None:
+            raise ValueError("Numeric fields cannot be None")
+
         self.age = age
+        self.sex = sex
         self.chest_pain_type = chest_pain_type
         self.resting_bp = resting_bp
         self.cholesterol = cholesterol
         self.fasting_bs = fasting_bs
+        self.resting_ecg = resting_ecg
         self.max_hr = max_hr
         self.oldpeak = oldpeak
         self.exercise_angina = exercise_angina
@@ -86,12 +90,13 @@ class CustomData:
         try:
             # Create a dictionary with the input data
             custom_data_input_dict = {
-                'Sex': [self.sex],
                 'Age': [self.age],
+                'Sex': [self.sex],
                 'ChestPainType': [self.chest_pain_type],
                 'RestingBP': [self.resting_bp],
                 'Cholesterol': [self.cholesterol],
                 'FastingBS': [self.fasting_bs],
+                'RestingECG': [self.resting_ecg],
                 'MaxHR': [self.max_hr],
                 'Oldpeak': [self.oldpeak],
                 'ExerciseAngina': [self.exercise_angina],
@@ -100,6 +105,7 @@ class CustomData:
             # Convert the dictionary to a DataFrame
             df = pd.DataFrame(custom_data_input_dict)
             logging.info('Dataframe gathered successfully')
+            logging.info(f"DataFrame contents: {df}")  # Log the DataFrame contents
             return df
         except Exception as e:
             # Log any exceptions that occur during DataFrame creation
