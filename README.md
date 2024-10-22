@@ -24,7 +24,7 @@ The dataset consists of the following features:
 - **`Risk of Heart Attack`**: A binary indicator of heart attack risk.
 
 ### Dataset Source
-[Dataset Link](https://www.kaggle.com/datasets/your-dataset-link-here)
+- **data set **: [Access dataset](./notebook/data)
 
 ## Categorical Variables
 
