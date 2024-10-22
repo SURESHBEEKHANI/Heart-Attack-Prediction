@@ -10,7 +10,7 @@ def get_requirements(file_path: str) -> List[str]:
     requirements = []
     with open(file_path) as file_obj:
         requirements = file_obj.readlines()
-        requirements = [req.replace("\n", "") for req in requirements]
+        requirements = [req.strip() for req in requirements]  # Use strip() to remove whitespace and newlines
 
         if HYPEN_E_DOT in requirements:
             requirements.remove(HYPEN_E_DOT)
@@ -18,16 +18,16 @@ def get_requirements(file_path: str) -> List[str]:
     return requirements
 
 setup(
-    name="Weather-Prediction",
+    name="Heart Attack Prediction",
     version="1.0.0",
     packages=find_packages(),
     # Package metadata
     author="Suresh Beekhani",
     author_email="sureshbeekhani26@gmail.com",
-    description="A tool for predicting Wethers  based on various factors.",
-    long_description="This package provides a comprehensive model for predicting Weathers  using data analysis and machine learning techniques.",
+    description="A tool for predicting the risk of heart attacks based on various health factors.",
+    long_description="This package provides a comprehensive model for predicting the risk of heart attacks using data analysis and machine learning techniques.",
     long_description_content_type="text/markdown",
-    url="https://github.com/SURESHBEEKHANI/WEATHER-PREDICTION.git",
+    url="https://github.com/SURESHBEEKHANI/HEART-ATTACK-PREDICTION.git",  # Updated URL to match your project
     # Read dependencies from requirements.txt
     install_requires=get_requirements('requirements.txt'),
     # License and classification
