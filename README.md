@@ -24,7 +24,7 @@ The dataset consists of the following features:
 - **`Risk of Heart Attack`**: A binary indicator of heart attack risk.
 
 ### Dataset Source
-- **data set **:[Access dataset](./notebook/data)
+- **data set**:[Access dataset](./notebook/data)
 
 ## Categorical Variables
 
@@ -58,7 +58,7 @@ The categorical variables **Sex**, **Chest Pain Type**, **Resting ECG**, **Exerc
 - [Deployment App](https://sureshbeekhani-heart-attack-prediction.hf.space)
 
 ## Screenshot of UI
-![API Prediction](./templates/Prediction.jpg)
+![API Prediction](./static/img/App_img1.PNG)
 
 ## YouTube Video
 Link for YouTube Video: Click the thumbnail to open.
@@ -94,9 +94,5 @@ Link for YouTube Video: Click the thumbnail to open.
    - Develop a Flask app with a user-friendly interface for predicting heart attack risk.
 
 ## Additional Resources
-- **Exploratory Data Analysis (EDA) Notebook**: [Access EDA Notebook](./notebook/1.%20EDA%20HEART%20PREDICTION.ipynb)
-- **Model Training Notebook**: [Access Model Training Notebook](./notebook/2.%20MODEL%20TRAINING%20HEART.ipynb)
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+- **Exploratory Data Analysis (EDA) Notebook**: [Access EDA Notebook](./notebook/Heart Attack.ipynb)
+- **Model Training Notebook**: [Access Model Training Notebook](./notebook/MODEL TRAINING.ipynb)
