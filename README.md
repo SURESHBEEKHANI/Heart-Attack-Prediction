@@ -94,5 +94,11 @@ Link for YouTube Video: Click the thumbnail to open.
    - Develop a Flask app with a user-friendly interface for predicting heart attack risk.
 
 ## Additional Resources
-- **Exploratory Data Analysis (EDA) Notebook**: [Access EDA Notebook](./notebook/Heart Attack.ipynb)
-- **Model Training Notebook**: [Access Model Training Notebook](./notebook/MODEL TRAINING.ipynb)
+- **Exploratory Data Analysis (EDA) Notebook**: [View EDA Notebook](./notebook/Heart%20Attack.ipynb)
+- **Model Training Notebook**: [View Model Training Notebook](./notebook/MODEL%20TRAINING.ipynb)
+
+
+
+
+
+
