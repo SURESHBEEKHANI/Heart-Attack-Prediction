@@ -60,8 +60,6 @@ The categorical variables **Sex**, **Chest Pain Type**, **Resting ECG**, **Exerc
 ## Screenshot of UI
 ![API Prediction](./static/img/App_img1.PNG)
 
-## YouTube Video
-Link for YouTube Video: Click the thumbnail to open.
 
 ## Project Approach
 
