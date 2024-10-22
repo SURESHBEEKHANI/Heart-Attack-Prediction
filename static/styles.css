@@ -15,6 +15,7 @@ header {
     padding: 2rem 0;
     text-align: center;
     position: relative; /* To allow positioning of the logo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
 header .logo {
@@ -28,7 +29,7 @@ main {
 }
 
 .container {
-    max-width: 300px; /* Slightly larger width for better spacing */
+    max-width: 600px; /* Increased width for better spacing */
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -43,10 +44,15 @@ h3 {
 
 /* Form Styles */
 form {
-    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for form */
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9)); /* Gradient for form */
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow for 3D effect */
+    transition: transform 0.3s; /* Smooth transition for hover */
+}
+
+form:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
 /* Form Inputs */
@@ -60,11 +66,13 @@ form {
     padding: 0.75rem;
     border: 1px solid #ccc; /* More defined border */
     transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus state */
+    background: #fff; /* White background for inputs */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow for 3D effect */
 }
 
 .form-control:focus {
     border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25), inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Outer shadow on focus */
     outline: none; /* Remove default outline */
 }
 
@@ -76,6 +84,9 @@ form {
     border-radius: 5px;
     width: 100%;
     transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    background-color: #007bff; /* Ensure background color is set */
+    border: none; /* Remove default border */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.25); /* Shadow for button */
 }
 
 .btn-primary:hover {
@@ -104,6 +115,7 @@ footer {
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+    position: relative; /* Allow positioning for effects */
 }
 
 footer p {
