@@ -24,7 +24,7 @@ The dataset consists of the following features:
 - **`Risk of Heart Attack`**: A binary indicator of heart attack risk.
 
 ### Dataset Source
-- **data set **: [Access dataset](./notebook/data)
+- **data set **:[Access dataset](./notebook/data)
 
 ## Categorical Variables
 
