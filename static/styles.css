@@ -5,7 +5,7 @@ body {
     background-size: cover;
     margin: 0;
     padding: 0;
-    color: #333; /* Change text color for better readability */
+    color: #333;
 }
 
 /* Header Styles */
@@ -14,13 +14,13 @@ header {
     color: #fff;
     padding: 2rem 0;
     text-align: center;
-    position: relative; /* To allow positioning of the logo */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 header .logo {
     max-width: 100px;
-    margin-bottom: 1rem; /* Space between logo and title */
+    margin-bottom: 1rem;
 }
 
 /* Main Section */
@@ -29,7 +29,7 @@ main {
 }
 
 .container {
-    max-width: 600px; /* Increased width for better spacing */
+    max-width: 600px; /* Centering the form */
     margin: 0 auto;
     padding: 0 1rem;
 }
@@ -38,42 +38,53 @@ main {
 h3 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    text-align: center; /* Center the section title */
-    color: #007bff; /* Match the primary color */
+    text-align: center;
+    color: #007bff;
 }
 
 /* Form Styles */
 form {
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9)); /* Gradient for form */
-    padding: 2rem;
+    background: linear-gradient(to bottom right, rgba(6, 142, 253, 0.9), rgba(240, 240, 240, 0.9));
+    padding: 2.5rem;
     border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Enhanced shadow for 3D effect */
-    transition: transform 0.3s; /* Smooth transition for hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 form:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px);
 }
 
 /* Form Inputs */
 .form-group label {
-    font-weight: 600; /* Slightly bolder for better visibility */
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block; /* Ensure labels are block-level */
 }
 
 .form-control {
     border-radius: 5px;
     font-size: 1rem;
     padding: 0.75rem;
-    border: 1px solid #ccc; /* More defined border */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for focus state */
+    border: 1px solid #ccc;
+    transition: border-color 0.3s, box-shadow 0.3s;
     background: #fff; /* White background for inputs */
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow for 3D effect */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form-control:focus {
     border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25), inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Outer shadow on focus */
-    outline: none; /* Remove default outline */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25), inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+/* Input Placeholder Styling */
+.form-control::placeholder {
+    color: #999; /* Light gray for placeholder */
+    font-style: italic; /* Italicize the placeholder text */
 }
 
 /* Submit Button */
@@ -83,39 +94,47 @@ form:hover {
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
     width: 100%;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
-    background-color: #007bff; /* Ensure background color is set */
-    border: none; /* Remove default border */
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.25); /* Shadow for button */
+    transition: background-color 0.3s, transform 0.3s;
+    background-color: #007bff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.25);
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: translateY(-2px); /* Slight lift effect on hover */
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
-/* Result Styling */
-.alert {
-    margin-top: 1.5rem;
-    padding: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
+/* Prediction Result Styles */
+.prediction-result {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Add padding for spacing */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-top: 30px; /* Space above */
+    width: 100%;
 }
 
-.alert-info {
-    background-color: #d1ecf1;
-    color: #0c5460;
-    border-color: #bee5eb;
+.result-title {
+    font-size: 24px; /* Larger font size for the title */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 10px; /* Space below title */
 }
+
+.result-value {
+    font-size: 18px; /* Font size for result */
+    color: #007bff; /* Use primary color for emphasis */
+    font-weight: 700; /* Bold font weight */
+}
+
 
 /* Footer Styles */
 footer {
-    background-color: #007bff; /* Primary color */
+    background-color: #007bff;
     color: #fff;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
-    position: relative; /* Allow positioning for effects */
 }
 
 footer p {

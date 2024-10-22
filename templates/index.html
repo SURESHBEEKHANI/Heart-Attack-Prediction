@@ -20,16 +20,13 @@
 
 <body>
     <header class="bg-primary text-white text-center py-3">
-        <!-- Title logo added -->
         <img src="static/img/ht.png" alt="Heart Health Logo" class="logo" style="max-width: 100px;">
         <h1>Heart Attack Prediction</h1>
-        <p>Predict heart attack risk using an AI application.</p>
+        <p>Predict heart attack risk using an AI application Provide Details of Patient.</p>
     </header>
 
     <main>
-        <div class="container my-4">
-            <h3>Provide Details of Patient</h3>
-            <!-- Form for user inputs -->
+        <div class="container">
             <form action="/predict" method="post" class="needs-validation" novalidate>
                 <!-- Sex Selection -->
                 <div class="form-group">
@@ -93,42 +90,42 @@
                 <!-- Age -->
                 <div class="form-group">
                     <label for="age">Age:</label>
-                    <input type="number" id="age" name="age" class="form-control" required min="0" aria-label="Enter your age">
+                    <input type="number" id="age" name="age" class="form-control" required min="0" placeholder="Enter your age" aria-label="Enter your age">
                     <div class="invalid-feedback">Please enter a valid age.</div>
                 </div>
 
                 <!-- Resting Blood Pressure -->
                 <div class="form-group">
-                    <label for="restingBP">Resting Blood Pressure:</label>
-                    <input type="number" id="restingBP" name="restingBP" class="form-control" required min="0" aria-label="Enter resting blood pressure">
+                    <label for="restingBP">Resting Blood Pressure (mm Hg):</label>
+                    <input type="number" id="restingBP" name="restingBP" class="form-control" required min="0" placeholder="Enter resting blood pressure" aria-label="Enter resting blood pressure">
                     <div class="invalid-feedback">Please enter resting blood pressure.</div>
                 </div>
 
                 <!-- Cholesterol -->
                 <div class="form-group">
-                    <label for="cholesterol">Cholesterol:</label>
-                    <input type="number" id="cholesterol" name="cholesterol" class="form-control" required min="0" aria-label="Enter cholesterol level">
+                    <label for="cholesterol">Cholesterol (mg/dl):</label>
+                    <input type="number" id="cholesterol" name="cholesterol" class="form-control" required min="0" placeholder="Enter cholesterol level" aria-label="Enter cholesterol level">
                     <div class="invalid-feedback">Please enter cholesterol level.</div>
                 </div>
 
                 <!-- Fasting Blood Sugar -->
                 <div class="form-group">
-                    <label for="fastingBS">Fasting Blood Sugar:</label>
-                    <input type="number" id="fastingBS" name="fastingBS" class="form-control" required min="0" aria-label="Enter fasting blood sugar">
+                    <label for="fastingBS">Fasting Blood Sugar (mg/dl):</label>
+                    <input type="number" id="fastingBS" name="fastingBS" class="form-control" required min="0" placeholder="Enter fasting blood sugar" aria-label="Enter fasting blood sugar">
                     <div class="invalid-feedback">Please enter fasting blood sugar.</div>
                 </div>
 
                 <!-- Max Heart Rate -->
                 <div class="form-group">
                     <label for="maxHR">Max Heart Rate:</label>
-                    <input type="number" id="maxHR" name="maxHR" class="form-control" required min="0" aria-label="Enter max heart rate">
+                    <input type="number" id="maxHR" name="maxHR" class="form-control" required min="0" placeholder="Enter max heart rate" aria-label="Enter max heart rate">
                     <div class="invalid-feedback">Please enter max heart rate.</div>
                 </div>
 
                 <!-- Oldpeak -->
                 <div class="form-group">
                     <label for="oldpeak">Oldpeak:</label>
-                    <input type="number" id="oldpeak" name="oldpeak" class="form-control" required step="0.1" min="0" aria-label="Enter oldpeak value">
+                    <input type="number" id="oldpeak" name="oldpeak" class="form-control" required step="0.1" min="0" placeholder="Enter oldpeak value" aria-label="Enter oldpeak value">
                     <div class="invalid-feedback">Please enter a valid oldpeak value.</div>
                 </div>
 
@@ -140,8 +137,9 @@
 
             <!-- Display prediction result -->
             {% if results %}
-            <div class="alert alert-info mt-4 text-center">
-                <h2>The prediction is: {{ results }}</h2>
+            <div class="alert alert-info mt-4 text-center prediction-result">
+                <h2 class="result-title">The prediction is:</h2>
+                <p class="result-value">{{ results }}</p>
             </div>
             {% endif %}
         </div>
